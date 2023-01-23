@@ -36,7 +36,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload entire repository
-          path: newman/petstore-2023-01-23-12-50-01-453-0.html
+          path: testResults/htmlreport.html
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
