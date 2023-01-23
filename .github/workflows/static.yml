@@ -34,9 +34,8 @@ jobs:
 
       # Run the POSTMAN collection
       - name: Run POSTMAN collection
-        run: bash ./|
+        run: bash ${GITHUB_WORKSPACE}/
           newman run petstore.collection.json -r htmlextra --reporter-htmlextra-export docs/index.html --reporter-htmlextra-darkTheme
-        shell: bash
 
 
       # Upload the contents of Test Results directory to workspace
