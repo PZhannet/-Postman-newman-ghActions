@@ -36,7 +36,7 @@ jobs:
       - name: Run POSTMAN collection
         run: |
           newman run petstore.collection.json -r htmlextra --reporter-htmlextra-export docs/index.html --reporter-htmlextra-darkTheme
-        shell: pwsh
+        shell: /usr/bin/bash -e {0}
 
 
       # Upload the contents of Test Results directory to workspace
