@@ -17,16 +17,6 @@ products:
     price: 30
     sku: 999921312423312
     description: awesome
-  - name: Pants
-    price: 523
-    sku: 845
-    description: attitude-oriented
-    id: 5
-  - name: Tuna
-    price: 617
-    sku: 496
-    description: regional
-    id: 5
 orders:
   - id: 1
     name: order1
