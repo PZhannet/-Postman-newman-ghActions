@@ -1,42 +1,46 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
-
+name: Test-Build
 on:
-  # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# Allow one concurrent deployment
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
-
+    branches:
+      - main
 jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  test-api:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup Pages
-        uses: actions/configure-pages@v2
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+
+      # INstall Node on the runner
+      - name: Install Node
+        uses: actions/setup-node@v1
         with:
-          # Upload entire repository
-          path: newman/petstore-2023-01-23-12-50-01-453-0.html
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+          node-version: "16.x"
+
+      - run: npm i npm@latest
+      - run: npm i
+
+      # Install the newman command line utility and also install the html extra reporter
+      - name: Install newman
+        run: |
+          npm install -g newman
+          npm install -g newman-reporter-htmlextra
+
+
+      # Make directory to upload the test results
+      - name: Make Directory for results
+        run: mkdir -p docs
+
+
+      # Run the POSTMAN collection
+      - name: Run POSTMAN collection
+        run: |
+          newman run petstore.collection.json -r htmlextra --reporter-htmlextra-export docs/index.html --reporter-htmlextra-darkTheme  > docs/runreport1.html
+
+
+      # Upload the contents of Test Results directory to workspace
+      - name: Output the run Details
+        uses: actions/upload-artifact@v2
+        with:
+          name: RunReports
+          path: docs
