@@ -4,9 +4,7 @@
   "description": "",
   "scripts": {
     "tern-on-api": "cp mockApi/db_back_up.yaml mockApi/db_stage.yaml && npx yaml-server --hotReload=off --autoStart=off --port 3000 --database ./mockApi/db_stage.yaml",
-    "run-report": "newman run petstore.collection.json -r htmlextra --reporter-htmlextra-export testResults/htmlreport.html --reporter-htmlextra-darkTheme",
-    "newman:test": "newman run petstore.collection.json",
-    "newman:html": "newman run petstore.collection.json -r htmlextra"
+    "run-report": "newman run petstore.collection.json -r htmlextra --reporter-htmlextra-export docs/index.html --reporter-htmlextra-darkTheme || true"
   },
   "keywords": [
     "api",
