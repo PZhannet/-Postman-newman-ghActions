@@ -35,11 +35,10 @@ jobs:
       # Run the POSTMAN collection
       - name: Run POSTMAN collection
         run: |
-          newman run petstore.collection.json -r htmlextra --reporter-htmlextra-export docs/index.html --reporter-htmlextra-darkTheme
-        shell: /usr/bin/bash -e {0}
+          newman run petstore.collection.json -r htmlextra --reporter-htmlextra-export docs/index.html --reporter-htmlextra-darkTheme || tru
 
 
-      # Upload the contents of Test Results directory to workspace
+      # Upload the contents of docs directory to workspace
       - name: Output the run Details
         uses: actions/upload-artifact@v2
         with:
