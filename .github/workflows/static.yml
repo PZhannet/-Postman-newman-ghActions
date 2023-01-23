@@ -35,7 +35,7 @@ jobs:
       # Run the POSTMAN collection
       - name: Run POSTMAN collection
         run: |
-          newman run petstore.collection.json -r htmlextra --reporter-htmlextra-export docs/index.html --reporter-htmlextra-darkTheme || tru
+          newman run petstore.collection.json -r htmlextra --reporter-htmlextra-export docs/index.html --reporter-htmlextra-darkTheme || true
 
 
       # Upload the contents of docs directory to workspace
