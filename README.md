@@ -15,9 +15,7 @@
 4. Drag one of the folders from the `store collection` into the `RUN ORDER` field
 5. Press the `Run store` button
 ### store - Run results
-<p align="center">
-  <img src="./images/storeRunResults.png" width="350" title="hover text">
-</p>
+![](https://pzhannet.github.io/-Postman-newman-ghActions/assets/images/storeRunResults.png)
 
 ## Newman
 - To run the collection through the command line
@@ -32,4 +30,4 @@
     <a href="https://pzhannet.github.io/-Postman-newman-ghActions/"> Report </a>
 
 ### Newman Run Dashboard
-![Newman Run Dashboard](https://pzhannet.github.io/-Postman-newman-ghActions/)
+![Newman Run Dashboard](https://pzhannet.github.io/-Postman-newman-ghActions/assets/images/newmanRunDashboard.png)
