@@ -1,3 +1,4 @@
+# # **Postman + newman + github actions** :sunglasses:
 ## Project description
 - Created integration tests in Postman based on a simple store template
 - Added GitHub action to run `petstore.collection.json` in Github pages
@@ -32,8 +33,9 @@
  `npm run run-report`
 
 ## GitHub Pages:
-- To see generated HTML report with test execution `petstore.collection.json`:
+
+To see generated HTML report with test execution `petstore.collection.json`:
 - <a href="https://pzhannet.github.io/-Postman-newman-ghActions/"> Report </a>
 
-### Newman Run Dashboard
+#### Report
 ![Newman Run Dashboard](https://github.com/PZhannet/-Postman-newman-ghActions/blob/main/images/newmanRunDashboard.png)
