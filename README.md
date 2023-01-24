@@ -11,7 +11,7 @@
 
 ## Project set up
 1. Clone the project `git clone https://github.com/PZhannet/-Postman-newman-ghActions`
-2. Move to the Postman_API_testing folder `cd Postman_API_testing`
+2. Move to the Postman_API_testing folder `cd -Postman-newman-ghActions`
 3. Run `npm i` (install node.js dependencies)
 
 ## Postman
